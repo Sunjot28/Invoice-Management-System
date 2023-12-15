@@ -1,0 +1,30 @@
+.header {
+    background-color: #5fa2dd;
+    color: white;
+    /* margin-left: 10px; */
+    font-size: 16px;
+    padding-left: 8px;
+}
+
+.logoImage{
+    height: 6rem;
+    width: 12rem;
+}
+
+.xyzImage{
+    height: 6rem;
+    width: 12rem;
+    margin-left: 30%;
+}
+
+#ext-element-1{
+    background-color: white;
+}
+
+#button-1168{
+    margin: 8px;
+    /* background-color: rgb(232, 226, 226); */
+    border: none;
+    /* color: black; */
+    
+}

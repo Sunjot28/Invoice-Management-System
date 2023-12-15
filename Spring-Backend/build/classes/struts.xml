@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="invoice" extends="json-default">
+		<action name="allinvoices" class="com.highradius.action.Action"
+			method="allinvoices">
+			<result name="Shown" type="json">
+				<param name="invoices"></param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="error">errorMsg</param>
+			</result>
+		</action>
+
+		<action name="allisopen" class="com.highradius.action.Action"
+			method="allisopen">
+			<result name="Shown" type="json">
+				<param name="invoices"></param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="error">errorMsg</param>
+			</result>
+		</action>
+		
+		<action name="allisclose" class="com.highradius.action.Action"
+			method="allisclose">
+			<result name="Shown" type="json">
+				<param name="invoices"></param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="error">errorMsg</param>
+			</result>
+		</action>
+
+		<action name="allisdeleted"
+			class="com.highradius.action.Action" method="allisdeleted">
+			<result name="Shown" type="json">
+				<param name="invoices"></param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="error">errorMsg</param>
+			</result>
+		</action>
+
+		<action name="addinvoice"
+			class="com.highradius.action.Action" method="addinvoice">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="Added" type="json">
+				<param name="statusCode">200</param>
+				<param name="errorMessage">invoice added successfully</param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="statusCode">404</param>
+				<param name="errorMessage">no invoice added</param>
+			</result>
+		</action>
+		
+		<action name="editinvoice"
+			class="com.highradius.action.Action" method="editinvoice">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="Edited" type="json">
+				<param name="statusCode">200</param>
+				<param name="errorMessage">invoice edited successfully</param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="statusCode">404</param>
+				<param name="errorMessage">no invoice edited</param>
+			</result>
+		</action>
+		
+		<action name="deleteinvoice"
+			class="com.highradius.action.Action" method="deleteinvoice">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="Deleted" type="json">
+				<param name="statusCode">200</param>
+				<param name="errorMessage">invoice deleted successfully</param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="statusCode">404</param>
+				<param name="errorMessage">no invoice deleted</param>
+			</result>
+		</action>
+		
+		<action name="approveinvoice"
+			class="com.highradius.action.Action" method="approveinvoice">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="Approved" type="json">
+				<param name="statusCode">200</param>
+				<param name="errorMessage">invoice deleted successfully</param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="statusCode">404</param>
+				<param name="errorMessage">no invoice deleted</param>
+			</result>
+		</action>
+		
+		<action name="advancesearch" class="com.highradius.action.Action"
+			method="advancesearch">
+			<interceptor-ref name="json">
+				<param name="enableSMD">true</param>
+			</interceptor-ref>
+			<result name="Found" type="json">
+				<param name="invoice"></param>
+			</result>
+			<result name="ERROR" type="json">
+				<param name="error">errorMsg</param>
+			</result>
+		</action>
+	</package>
+</struts>
